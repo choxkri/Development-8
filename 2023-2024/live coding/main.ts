@@ -1,5 +1,55 @@
-console.log("Hello world!")
+console.log("Hello world!");
 
+function sumOftwoNumbers(a:number, b:number) : number{
+  return a + b;
+}
+
+let anumber : number = 4;
+
+function sumof2(a: number): ((b: number ) => number) {
+  function internal(b: number):number{
+    return a + b
+  }
+  return internal
+}
+console.log(sumof2(5)(10))
+
+const sumOftwoNumbersAsLambda = (a: number) :  ((b: number) => number) => {
+  const internalfunc : (b: number) => number = b => a + b;
+
+  return internalfunc
+}
+
+//onjuiste manier
+function sumOfAllNumbers(n : number){
+  let sum = 0;
+  while (n>0){
+    //sum += n--
+    sum = sum + n
+    n = n -1
+  }
+  return sum
+}
+
+function sumOfAllNumbersRec_v0(n : number){
+  let sum = 0;
+  while (n>0){
+    //sum += n--
+    sum = sum + n
+    n = n -1
+  }
+  return sum
+}
+
+function sumOfAllNumbersRec(n : number) : number{
+  return n === 0 ? n : n + sumOfAllNumbersRec(n - 1)
+}
+
+const sumOfAllNumbersRec_v2 : (n : number) => number = n => n === 0 ? n : n + sumOfAllNumbersRec_v2(n - 1)
+
+console.log
+console.log(sumOfAllNumbersRec(5))
+console.log(sumOfAllNumbersRec_v2(5))
 /*
 Lambda calculus: 1930 Church
 

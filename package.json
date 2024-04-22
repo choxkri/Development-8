@@ -1,8 +1,4 @@
 {
-  "name": "live_coding",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
   "dependencies": {
     "immutable": "^5.0.0-beta.5",
     "node": "^18.20.2",
